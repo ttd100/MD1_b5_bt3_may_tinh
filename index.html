@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+<table border="1" >
+    <tr>
+      <td colspan="4"><input type="text" id="display"></td>
+    </tr>
+    <tr>
+        <td><button onclick="calculate('(')">(</button></td>
+        <td><button onclick="calculate(')')">)</button></td>
+        <td><button onclick="calculate('%')">%</button></td>
+        <td><button onclick="reset()">AC</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="calculate('7')">7</button></td>
+        <td><button onclick="calculate('8')">8</button></td>
+        <td><button onclick="calculate('9')">9</button></td>
+        <td><button onclick="calculate('/')">/</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="calculate('4')">4</button></td>
+        <td><button onclick="calculate('5')">5</button></td>
+        <td><button onclick="calculate('6')">6</button></td>
+        <td><button onclick="calculate('*')">&times;</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="calculate('1')">1</button></td>
+        <td><button onclick="calculate('2')">2</button></td>
+        <td><button onclick="calculate('3')">3</button></td>
+        <td><button onclick="calculate('-')">-</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="calculate('0')">0</button></td>
+        <td><button onclick="calculate('.')">.</button></td>
+        <td><button onclick="answer()">=</button></td>
+        <td><button onclick="calculate('+')">+</button></td>
+    </tr>
+    <script>
+        function calculate(a){
+            document.getElementById('display').value += a;
+        }
+        function reset(){
+            document.getElementById('display').value = null;
+        }
+        function answer(){
+           if (document.getElementById('display').value)
+            document.getElementById('display').value = eval(document.getElementById('display').value)
+        }
+
+    </script>
+</table>
+</body>
+</html>
